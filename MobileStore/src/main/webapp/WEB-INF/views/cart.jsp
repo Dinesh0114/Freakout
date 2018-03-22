@@ -28,7 +28,7 @@
 <c:set var="grandTotal" value="0"></c:set>
 <c:forEach items="${Cart.cartItems }" var="cartItem">
 <tr>
-<td>${cartItem.product.productname }</td>
+<td>${cartItem.product.productName }</td>
 <td>${cartItem.quantity }</td>
 <td>${cartItem.totalPrice }</td>
 
@@ -39,7 +39,7 @@
 <td></td>
 <!--  grandTotal = cartItem.totalPrice + grandTotal -->
 
-<c:set var="grandTotal" value="${cartItem.totalPrice + grandTotal }"></c:set>
+<c:set var="grandTotal" value="${cartItem.totalPrice  + grandTotal }"></c:set>
 </tr>
 </c:forEach>
 </table>

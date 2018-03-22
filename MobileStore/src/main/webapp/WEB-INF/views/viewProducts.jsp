@@ -25,10 +25,11 @@
 <b>Product Name:</b> ${product.productName }<br>
 <b>Product Description:</b>${product.productDesc }<br>
 <b>Price:</b>${product.productCost }<br>
-<b>Stock:</b>${product.productStock }<br>
+ <b>Available Quantity:</b>${product.productStock }<br>
 <b>Category </b>${product.category.categoryName }<br>	
 	  <c:url value='/cart/addtocart/${product.productId}' var="addtocart"></c:url> 
 	  <security:authorize access="hasRole('ROLE_USER')">
+	  <b>Enter Quantity</b><input type="text" name="quantity" value="1">
       <li><a href=${addtocart}><button type="submit"  value='Add To Cart'  class="btn btn-info btn-lg glyphicon" >
 	  <span class="glyphicon-shopping-cart"></span>Add to Cart 
 	  </button></a></li>

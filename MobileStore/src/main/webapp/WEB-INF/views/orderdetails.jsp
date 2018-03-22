@@ -76,11 +76,11 @@
                                 <c:set var="grandTotal" value="0.0"></c:set>
                                 <c:forEach var="cartItem" items="${order.cart.cartItems}">
                                     <tr>
-                            <c:url value="/resources/images/${cartItem.product.id }.png" var="imgUrl"></c:url>
+                            <c:url value="/resources/image/${cartItem.product.productId }.jpg" var="imgUrl"></c:url>
                                         <td><img src="${imgUrl }">  </td>
-                                        <td class="col-md-9"><em>${cartItem.product.productname}</em></td>
+                                        <td class="col-md-9"><em>${cartItem.product.productName}</em></td>
                                         <td class="col-md-1" style="text-align: center">${cartItem.quantity}</td>
-                                        <td class="col-md-1" style="text-align: center">${cartItem.product.price}</td>
+                                        <td class="col-md-1" style="text-align: center">${cartItem.product.productCost}</td>
                                         <td class="col-md-1" style="text-align: center">${cartItem.totalPrice}</td>
                                         <c:set var="grandTotal" value="${grandTotal + cartItem.totalPrice }"></c:set>
                                     </tr>

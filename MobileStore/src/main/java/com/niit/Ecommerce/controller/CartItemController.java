@@ -42,9 +42,11 @@ public String addToCart(@AuthenticationPrincipal Principal principal,@PathVariab
 	
 	String username=principal.getName();
 	User user=customerDAO.getUser(username);
+	System.out.println(user);
 	Customer customer=user.getCustomer();
-	Cart cart=customer.getCart();
-	
+	System.out.println(customer);
+	//Cart cart=customer.getCart();
+	Cart cart=cartItemDAO.getCart(74);
 	List<CartItem> cartItems=cart.getCartItems();
 	
 	for(CartItem cartItem:cartItems){
@@ -71,8 +73,9 @@ public String addToCart(@AuthenticationPrincipal Principal principal,@PathVariab
 		String username=principal.getName();
 		User user=customerDAO.getUser(username);
 		Customer customer=user.getCustomer();
-		Cart cart=customer.getCart();
-		model.addAttribute("cart",cart);
+		//Cart cart=customer.getCart();
+		Cart cart=cartItemDAO.getCart(74);
+		model.addAttribute("Cart",cart);
 		return "cart";
 	}
 	
